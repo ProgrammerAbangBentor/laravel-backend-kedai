@@ -3,12 +3,15 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/dashboard', function () {
-    return view('pages.dashboard', ['type_menu' => 'dashboard']);
+    return view('auth.auth-login');
 });
 
-// Route::get('/login', function () {
-//     return view('auth.auth-login', ['type_menu' => 'auth']);
+// Route::get('/dashboard', function () {
+//     return view('pages.dashboard', ['type_menu' => 'dashboard']);
 // });
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('home', function () {
+        return view('pages.dashboard', ['type_menu' => 'home']);
+    })->name('home');
+});
