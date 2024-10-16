@@ -1,26 +1,23 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="index.html">Stisla</a>
+           <h4>SISTEM PPKS</h4>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">St</a>
+            <a href="index.html">PPKS</a>
         </div>
         <ul class="sidebar-menu">
-            <li class="menu-header">Dashboard</li>
-            <li class="nav-item dropdown {{ $type_menu === 'dashboard' ? 'active' : '' }}">
+            <li class="{{ Request::is('credits') ? 'active' : '' }}">
                 <a href="#"
-                    class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Dashboard</span></a>
-                <ul class="dropdown-menu">
-                    <li class='{{ Request::is('dashboard-general-dashboard') ? 'active' : '' }}'>
-                        <a class="nav-link"
-                            href="{{ url('dashboard-general-dashboard') }}">General Dashboard</a>
-                    </li>
-                    <li class="{{ Request::is('dashboard-ecommerce-dashboard') ? 'active' : '' }}">
-                        <a class="nav-link"
-                            href="{{ url('dashboard-ecommerce-dashboard') }}">Ecommerce Dashboard</a>
-                    </li>
-                </ul>
+                    class="nav-link "><i class="fas fa-home"></i><span>Dashboard</span>
+                </a>
+            </li>
+
+            <li class="{{ Request::is('credits') ? 'active' : '' }}">
+                <a class="nav-link"
+                    href="{{ route('user.index')}}"><i class="fa-sharp-duotone fa-solid fa-users"></i>
+                    </i> <b><span>Users</span></b>
+                </a>
             </li>
             <li class="menu-header">Starter</li>
             <li class="nav-item dropdown {{ $type_menu === 'layout' ? 'active' : '' }}">
