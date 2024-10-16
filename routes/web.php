@@ -6,6 +6,7 @@ Route::get('/', function () {
     return view('auth.auth-login');
 });
 
+
 // Route::get('/dashboard', function () {
 //     return view('pages.dashboard', ['type_menu' => 'dashboard']);
 // });
