@@ -16,34 +16,31 @@
 
         <div class="card-body">
             <form method="POST"
-                action="{{ route('login') }}"
-
-                {{-- <form method="POST" action="{{ route('login') }}" class="needs-validation" novalidate="">
-                    @csrf --}}
+                action="{{route('login')}}"
                 class="needs-validation"
                 novalidate="">
                 @csrf
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                        value="{{ old('email') }}" name="email" tabindex="1">
+                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" name="email" tabindex="1">
                     @error('email')
-                        <div class="invalid-feedback">
-                            {{ $message }}
-                        </div>
+
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
                     @enderror
+
                 </div>
                 <div class="form-group">
                     <div class="d-block">
-                        <label for="password" class="control-label">Password</label>
-
+                        <label for="password"
+                            class="control-label">Password</label>
                     </div>
                     <input id="password" type="password" class="form-control" name="password" tabindex="2">
                     <div class="invalid-feedback">
                         please fill in your password
                     </div>
                 </div>
-
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
                         Login
@@ -51,12 +48,12 @@
                 </div>
             </form>
 
-            </div>
         </div>
-        <div class="text-muted mt-5 text-center">
-            Don't have an account? <a href="{{'register'}}">Create One</a>
-        </div>
-    @endsection
+    </div>
+    <div class="text-muted mt-5 text-center">
+        Don't have an account? <a href="{{route('register')}}">Create One</a>
+    </div>
+@endsection
 
     @push('scripts')
         <!-- JS Libraies -->
